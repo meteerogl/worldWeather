@@ -1,0 +1,64 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static "node_modules/bootstrap/dist/css/bootstrap.css" %}">
+    <link rel="stylesheet"
+          href="{% static "fonts/material-design-iconic-font/css/material-design-iconic-font.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/login.css" %}">
+    <link rel="icon" href="{% static "img/logo.png" %}" sizes="32x32" type="image/png">
+    <title>Register Foreign Exchange</title>
+</head>
+<body class="text-center">
+
+<div class="form-signin" style="text-align:justify">
+    <div style="width: 100%;text-align: center">
+            <img style="margin-right: 35px" class="mb-5" src="{% static "img/logo.png" %}" alt="" width="92" height="92">
+    </div>
+    <label for="register_name" class="sr-only">Name</label>
+    <input type="text" id="register_name" class="form-control" placeholder="User Name" required autofocus>
+    <div id="register_name_error" class="invalid-feedback">
+        Name is required.
+    </div>
+
+    <label for="register_email" class="sr-only">Email address</label>
+    <input  type="email" id="register_email" class="form-control mt-3" placeholder="Email address" required>
+    <div id="register_email_error" class="invalid-feedback">
+        Valid email is required.
+    </div>
+
+    <label for="register_password1" class="sr-only">Password</label>
+    <input type="password" id="register_password1" class="form-control mt-3" placeholder="Password" required>
+    <div id="register_password1_error" class="invalid-feedback">
+        Valid password is required.
+    </div>
+
+    <label for="register_password2" class="sr-only">Password</label>
+    <input type="password" id="register_password2" class="form-control mt-3" placeholder="Password confirmation" required>
+    <div id="register_password2_error" class="invalid-feedback">
+        Passwords must be the same.
+    </div>
+
+    <button id="register_button" class="btn mt-3 btn-lg btn-primary btn-block" type="submit">Sign up</button>
+    <div style="width: 100%;text-align: center">
+        <h6 class="h6 mt-3 mb-3 font-weight-normal">Have an account? <a href="{% url 'login-user' %}">Log in</a></h6>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+    </div>
+</div>
+</body>
+<script src="{% static "node_modules/jquery/dist/jquery.min.js" %}"></script>
+<script src="{% static "node_modules/bootstrap/dist/js/bootstrap.js" %}"></script>
+<script src="{% static "js/core.js" %}"></script>
+<script src="{% static "js/page_register.js" %}"></script>
+<script>
+    $(document).ready(function () {
+        pageRegister.load()
+    })
+</script>
+
+
+</html>
